@@ -1,7 +1,14 @@
 import "./App.css";
+import GroceriesAppContainer from "./Components/GroceriesAppContainer";
+import NavBar from "./Components/NavBar";
 
 function App() {
-  return <>{/* Add your code here! */}</>;
+  return (
+    <div>
+      <NavBar username="Wayne" />
+      <GroceriesAppContainer />
+    </div>
+  );
 }
 
 export default App;
