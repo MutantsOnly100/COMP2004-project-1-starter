@@ -8,7 +8,7 @@ function CartContainer({ cart, updateQuantity, removeItem, emptyCart }) {
   }, 0);
 
   return (
-    <div className="cart-container">
+    <div className="CartContainer">
       {cart.length === 0 ? (
         <p>No items in the cart.</p>
       ) : (
@@ -21,8 +21,12 @@ function CartContainer({ cart, updateQuantity, removeItem, emptyCart }) {
           />
         ))
       )}
-      <button onClick={emptyCart}>Empty Cart</button>
-      <button>Buy - Total: ${totalPrice.toFixed(2)}</button>
+      <div className="CartListBtns">
+        <button onClick={emptyCart} className="RemoveButton">
+          Empty Cart
+        </button>
+        <button id="BuyButton">Buy - Total: ${totalPrice.toFixed(2)}</button>
+      </div>
     </div>
   );
 }

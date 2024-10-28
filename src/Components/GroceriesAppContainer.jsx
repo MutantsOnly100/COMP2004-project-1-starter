@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import products from "../data/products"; // import your products.js data
+import products from "../data/products";
 import ProductsContainer from "./ProductsContainer";
 import CartContainer from "./CartContainer";
 
@@ -8,12 +8,12 @@ function GroceriesAppContainer() {
 
   const addToCart = (product, quantity) => {
     if (quantity === 0) {
-      alert("Please add a quantity before adding to cart.");
+      alert("Quantity must not be 0");
       return;
     }
 
     setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id);
+      const existingProduct = prevCart.find((item) => item.id === product.id); //Check if the product is already in the cart
       if (existingProduct) {
         return prevCart.map((item) =>
           item.id === product.id
@@ -35,13 +35,13 @@ function GroceriesAppContainer() {
   };
 
   const removeItem = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId)); //set cart to have everything in the original cart except the one user wants to remove
   };
 
   const emptyCart = () => setCart([]);
 
   return (
-    <div>
+    <div className="ProductsContainer">
       <ProductsContainer products={products} addToCart={addToCart} />
       <CartContainer
         cart={cart}

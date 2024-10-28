@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar";
 
 function App() {
   return (
-    <div>
+    <div id="root">
       <NavBar username="Wayne" />
       <GroceriesAppContainer />
     </div>

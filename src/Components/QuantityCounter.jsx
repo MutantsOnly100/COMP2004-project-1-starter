@@ -2,7 +2,7 @@ import React from "react";
 
 function QuantityCounter({ quantity, setQuantity, min = 0 }) {
   return (
-    <div className="quantity-counter">
+    <div className="ProductQuantityDiv">
       <button onClick={() => setQuantity(Math.max(min, quantity - 1))}>
         -
       </button>

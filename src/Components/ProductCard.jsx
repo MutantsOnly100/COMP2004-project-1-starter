@@ -7,7 +7,7 @@ function ProductCard({ product, addToCart }) {
   const price = parseFloat(product.price.replace("$", ""));
 
   return (
-    <div className="product-card">
+    <div className="ProductCard">
       <img src={product.image} alt={product.productName} />
       <h3>{product.productName}</h3>
       <p>Brand: {product.brand}</p>
