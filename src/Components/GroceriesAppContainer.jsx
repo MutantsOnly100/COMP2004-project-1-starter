@@ -41,6 +41,16 @@ function GroceriesAppContainer() {
 
   const emptyCart = () => setCart([]);
 
+  const checkoutCart = () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    alert("Checking out...");
+    emptyCart();
+  };
+
   return (
     <div className="ProductsContainer">
       <ProductsContainer products={products} addToCart={addToCart} />
@@ -49,6 +59,7 @@ function GroceriesAppContainer() {
         updateQuantity={updateQuantity}
         removeItem={removeItem}
         emptyCart={emptyCart}
+        checkoutCart={checkoutCart}
       />
     </div>
   );

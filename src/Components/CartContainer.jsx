@@ -1,7 +1,13 @@
 import React from "react";
 import CartCard from "./CartCard";
 
-function CartContainer({ cart, updateQuantity, removeItem, emptyCart }) {
+function CartContainer({
+  cart,
+  updateQuantity,
+  removeItem,
+  emptyCart,
+  checkoutCart,
+}) {
   const totalPrice = cart.reduce((total, item) => {
     const price = parseFloat(item.price.replace("$", ""));
     return total + price * item.quantity;
@@ -25,7 +31,9 @@ function CartContainer({ cart, updateQuantity, removeItem, emptyCart }) {
         <button onClick={emptyCart} className="RemoveButton">
           Empty Cart
         </button>
-        <button id="BuyButton">Buy - Total: ${totalPrice.toFixed(2)}</button>
+        <button onClick={checkoutCart} id="BuyButton">
+          Buy - Total: ${totalPrice.toFixed(2)}
+        </button>
       </div>
     </div>
   );
